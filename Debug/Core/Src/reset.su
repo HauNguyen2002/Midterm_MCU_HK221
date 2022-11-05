@@ -1,0 +1,6 @@
+reset.c:24:6:subRESETProcess	4	static
+reset.c:29:6:subINCProcess	4	static
+reset.c:34:6:subDECProcess	4	static
+reset.c:39:6:getRESETInput	8	static
+reset.c:56:6:getINCInput	8	static
+reset.c:90:6:getDECInput	8	static
