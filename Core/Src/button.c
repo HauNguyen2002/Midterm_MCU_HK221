@@ -22,17 +22,14 @@ int inc_flag = 0;
 int dec_flag = 0;
 
 void subRESETProcess(){
-	//TODO
 	reset_flag = 1;
 }
 
 void subINCProcess(){
-	//TODO
 	inc_flag = 1;
 }
 
 void subDECProcess(){
-	//TODO
 	dec_flag = 1;
 }
 
@@ -53,7 +50,7 @@ void getRESETInput(){
   }
 }
 
-void getINCInput(){
+void getINCInput(){ //function for inc button
   KeyReg6 = KeyReg5;
   KeyReg5 = KeyReg4;
   KeyReg4 = HAL_GPIO_ReadPin(INC_GPIO_Port, INC_Pin);
@@ -65,7 +62,7 @@ void getINCInput(){
       if (KeyReg7 == PRESSED_STATE)
       {
         subINCProcess();
-        TimeOutForINCPress =  300;
+        TimeOutForINCPress =  300; //set time out duration to 3s
       }
     }
     else
@@ -73,7 +70,7 @@ void getINCInput(){
        TimeOutForINCPress --;
         if (TimeOutForINCPress == 0)
         {
-            if (KeyReg7 == PRESSED_STATE)
+            if (KeyReg7 == PRESSED_STATE) //if after 3s the inc button is still pressed, start increasing the count value by 1 for every 1s
             {
               subINCProcess();
               TimeOutForINCPress =  100;
@@ -99,14 +96,14 @@ void getDECInput(){
       if (KeyReg11 == PRESSED_STATE)
       {
     	  subDECProcess();
-        TimeOutForDECPress =  300;
+        TimeOutForDECPress =  300;//set time out duration to 3s
       }
     }
     else
     {
     	TimeOutForDECPress --;
         if (TimeOutForDECPress == 0){
-            if (KeyReg11 == PRESSED_STATE)
+            if (KeyReg11 == PRESSED_STATE)//if after 3s the dec button is still pressed, start decreasing the count value by 1 for every 1s
             {
             	subDECProcess();
               TimeOutForDECPress =  100;
@@ -119,5 +116,4 @@ void getDECInput(){
         }
     }
   }
-
 }

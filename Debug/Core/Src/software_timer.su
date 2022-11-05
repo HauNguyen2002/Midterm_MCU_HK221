@@ -1,4 +1,4 @@
 software_timer.c:10:6:setTimer	16	static
 software_timer.c:15:6:timerRun	4	static
-software_timer.c:37:6:Blink	16	static
-software_timer.c:42:6:BlinkRun	4	static
+software_timer.c:40:6:Blink	16	static
+software_timer.c:45:6:BlinkRun	4	static
